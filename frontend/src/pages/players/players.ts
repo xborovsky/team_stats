@@ -1,3 +1,4 @@
+import { PlayerDetailPage } from './../player-detail/player-detail';
 import { Player } from './../../model/player';
 import { PlayerProvider } from './../../providers/player/player-provider';
 import { Component } from '@angular/core';
@@ -25,7 +26,12 @@ export class PlayersPage {
 
   ionViewDidLoad() {
     this.players = this.playerProvider.getAllPlayers();
-    this.playerProvider.getAllPlayers().subscribe((data) => console.log(data));
+  }
+
+  goToPlayerDetail(id:number) {
+    this.playerProvider.getPlayer(id).subscribe((player:Player) =>
+      this.navCtrl.push(PlayerDetailPage, player)
+    );
   }
 
 }

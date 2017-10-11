@@ -1,3 +1,4 @@
+import { PlayerDetailPage } from './../pages/player-detail/player-detail';
 import { PlayersPage } from './../pages/players/players';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
@@ -12,13 +13,15 @@ import { TeamProvider } from '../providers/team/team';
 
 import { TeamComponent } from './../components/team/team';
 import { PlayerProvider } from '../providers/player/player-provider';
+import { StatsProvider } from '../providers/stats/stats-provider';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     TeamComponent,
-    PlayersPage
+    PlayersPage,
+    PlayerDetailPage
   ],
   imports: [
     BrowserModule,
@@ -29,14 +32,16 @@ import { PlayerProvider } from '../providers/player/player-provider';
   entryComponents: [
     MyApp,
     HomePage,
-    PlayersPage
+    PlayersPage,
+    PlayerDetailPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     TeamProvider,
-    PlayerProvider
+    PlayerProvider,
+    StatsProvider
   ]
 })
 export class AppModule {}

@@ -18,13 +18,15 @@ export class PlayerProvider {
   constructor(public http: Http) {}
 
   getAllPlayers():Observable<Player[]> {
-    console.log('getAllPlayers');
     return this.http.get(this.url)
-      .map((res:Response) => { console.log(res.json()); return res.json(); })
-      .catch((error:any) => {
-        console.log(error);
-        return Observable.throw(error.json().error || 'Server error');
-      });
+      .map((res:Response) => res.json())
+      .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
+  }
+
+  getPlayer(id:number):Observable<Player> {
+    return this.http.get(`${this.url}/${id}`)
+      .map((res:Response) => res.json())
+      .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
   }
 
 }

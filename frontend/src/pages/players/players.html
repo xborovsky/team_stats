@@ -19,7 +19,7 @@
       Players
     </ion-list-header>
     <ion-item *ngFor="let player of players | async">
-      <ion-label>
+      <ion-label (click)="goToPlayerDetail(player.id)">
         <ion-grid>
           <ion-row>
             <ion-col col-1>
