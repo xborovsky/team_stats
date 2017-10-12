@@ -16,18 +16,25 @@
       <ion-label (click)="goToMatchDetail(match.id)">
         <ion-grid>
           <ion-row>
-            <ion-col>
-              <!--<ion-img width="80" height="80" src="data:image/jpeg;base64,{{player.photo}}"></ion-img>-->
-              <img src="data:image/jpeg;base64,{{match.homeTeam.logo}}" /> {{ match.homeTeam.name }}
+            <ion-col col-10>
+              <ion-grid>
+                <ion-row justify-content-start>
+                  <ion-col col-2><img src="data:image/jpeg;base64,{{match.homeTeam.logo}}" /></ion-col>
+                  <ion-col col-10 class="team-name">{{ match.homeTeam.name }}</ion-col>
+                </ion-row>
+                <ion-row justify-content-start>
+                  <ion-col col-2><img src="data:image/jpeg;base64,{{match.awayTeam.logo}}" /></ion-col>
+                  <ion-col col-10 class="team-name">{{ match.awayTeam.name }}</ion-col>
+                </ion-row>
+              </ion-grid>
             </ion-col>
-            <ion-col>
-              {{ match.awayTeam.name }} <img src="data:image/jpeg;base64,{{match.awayTeam.logo}}" />
-            </ion-col>
-            <ion-col>
-              {{ match.date | date:'dd.MM.y hh:mm' }}
-            </ion-col>
-            <ion-col>
+            <ion-col col-2 justify-content-end align-self-center class="score">
               0:0
+            </ion-col>
+          </ion-row>
+          <ion-row justify-content-start>
+            <ion-col class="match-date">
+              {{ match.date | date:'dd.MM.y hh:mm' }}
             </ion-col>
           </ion-row>
         </ion-grid>
