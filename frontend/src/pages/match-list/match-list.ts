@@ -1,15 +1,9 @@
+import { MatchDetailPage } from './../match-detail/match-detail';
 import { Observable } from 'rxjs/rx';
 import { Match } from './../../model/match';
 import { MatchProvider } from './../../providers/match/match-provider';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the MatchListPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -26,7 +20,8 @@ export class MatchListPage {
   }
 
   goToMatchDetail(id:number) {
-    // TODO
+    this.matchProvider.getMatch(id)
+      .subscribe((match:Match) => this.navCtrl.push(MatchDetailPage, match));
   }
 
 }

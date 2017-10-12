@@ -1,0 +1,21 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Match detail</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card>
+    <ion-card-content>
+      <ion-card-title>
+        <img src="data:image/jpeg;base64,{{match.homeTeam.logo}}" /> {{ match.homeTeam.name }}<br />
+        <img src="data:image/jpeg;base64,{{match.awayTeam.logo}}" /> {{ match.awayTeam.name }}<br />
+        0 : 0<br />
+        {{ match.date | date:'dd.MM.yy hh:mm:ss' }}
+      </ion-card-title>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
