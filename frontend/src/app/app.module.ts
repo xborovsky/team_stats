@@ -1,3 +1,4 @@
+import { MatchListPage } from './../pages/match-list/match-list';
 import { PlayerDetailPage } from './../pages/player-detail/player-detail';
 import { PlayersPage } from './../pages/players/players';
 import { BrowserModule } from '@angular/platform-browser';
@@ -14,6 +15,7 @@ import { TeamProvider } from '../providers/team/team';
 import { TeamComponent } from './../components/team/team';
 import { PlayerProvider } from '../providers/player/player-provider';
 import { StatsProvider } from '../providers/stats/stats-provider';
+import { MatchProvider } from '../providers/match/match-provider';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { StatsProvider } from '../providers/stats/stats-provider';
     HomePage,
     TeamComponent,
     PlayersPage,
-    PlayerDetailPage
+    PlayerDetailPage,
+    MatchListPage
   ],
   imports: [
     BrowserModule,
@@ -33,7 +36,8 @@ import { StatsProvider } from '../providers/stats/stats-provider';
     MyApp,
     HomePage,
     PlayersPage,
-    PlayerDetailPage
+    PlayerDetailPage,
+    MatchListPage
   ],
   providers: [
     StatusBar,
@@ -41,7 +45,8 @@ import { StatsProvider } from '../providers/stats/stats-provider';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     TeamProvider,
     PlayerProvider,
-    StatsProvider
+    StatsProvider,
+    MatchProvider
   ]
 })
 export class AppModule {}
