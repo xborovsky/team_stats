@@ -1,0 +1,30 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Teams</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-list-header>
+      Teams
+    </ion-list-header>
+    <ion-item *ngFor="let team of teams | async">
+      <ion-label>
+        <ion-grid>
+          <ion-row>
+            <ion-col col-2>
+              {{ team.logo }}
+            </ion-col>
+            <ion-col>
+              {{ team.name }}
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

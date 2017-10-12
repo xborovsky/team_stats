@@ -5,12 +5,6 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import { Observable } from 'rxjs/rx';
 
-/*
-  Generated class for the PlayerProvider provider.
-
-  See https://angular.io/guide/dependency-injection for more info on providers
-  and Angular DI.
-*/
 @Injectable()
 export class PlayerProvider {
   private url = 'http://localhost:1337/localhost:8080/team-stats-backend/players';

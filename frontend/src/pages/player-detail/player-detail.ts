@@ -23,7 +23,6 @@ export class PlayerDetailPage {
     this.statsProvider.getPlayerStats(this.playerId)
       .subscribe((statistic:Statistic) => {
         this.statistic = statistic;
-        console.log(statistic);
       });
   }
 

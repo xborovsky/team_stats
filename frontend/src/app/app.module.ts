@@ -1,3 +1,4 @@
+import { TeamsPage } from './../pages/teams/teams';
 import { MatchDetailPage } from './../pages/match-detail/match-detail';
 import { TabsComponent } from './../components/tabs/tabs';
 import { MatchListPage } from './../pages/match-list/match-list';
@@ -11,10 +12,8 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { HttpModule } from '@angular/http';
 
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
-import { TeamProvider } from '../providers/team/team';
+import { TeamProvider } from '../providers/team/team-provider';
 
-import { TeamComponent } from './../components/team/team';
 import { PlayerProvider } from '../providers/player/player-provider';
 import { StatsProvider } from '../providers/stats/stats-provider';
 import { MatchProvider } from '../providers/match/match-provider';
@@ -22,13 +21,12 @@ import { MatchProvider } from '../providers/match/match-provider';
 @NgModule({
   declarations: [
     MyApp,
-    HomePage,
-    TeamComponent,
     PlayersPage,
     PlayerDetailPage,
     MatchListPage,
     TabsComponent,
-    MatchDetailPage
+    MatchDetailPage,
+    TeamsPage
   ],
   imports: [
     BrowserModule,
@@ -38,12 +36,12 @@ import { MatchProvider } from '../providers/match/match-provider';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage,
     PlayersPage,
     PlayerDetailPage,
     MatchListPage,
     TabsComponent,
-    MatchDetailPage
+    MatchDetailPage,
+    TeamsPage
   ],
   providers: [
     StatusBar,
@@ -52,7 +50,8 @@ import { MatchProvider } from '../providers/match/match-provider';
     TeamProvider,
     PlayerProvider,
     StatsProvider,
-    MatchProvider
+    MatchProvider,
+    TeamProvider
   ]
 })
 export class AppModule {}

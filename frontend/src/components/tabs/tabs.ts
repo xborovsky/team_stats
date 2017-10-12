@@ -1,3 +1,4 @@
+import { TeamsPage } from './../../pages/teams/teams';
 import { MatchListPage } from './../../pages/match-list/match-list';
 import { PlayersPage } from './../../pages/players/players';
 import { Component } from '@angular/core';
@@ -10,6 +11,7 @@ export class TabsComponent {
 
   playersRoot = PlayersPage;
   matchesRoot = MatchListPage;
+  teamsRoot = TeamsPage;
 
   constructor() {}
 
