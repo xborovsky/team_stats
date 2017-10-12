@@ -1,3 +1,4 @@
+import { TabsComponent } from './../components/tabs/tabs';
 import { MatchListPage } from './../pages/match-list/match-list';
 import { PlayerDetailPage } from './../pages/player-detail/player-detail';
 import { PlayersPage } from './../pages/players/players';
@@ -24,7 +25,8 @@ import { MatchProvider } from '../providers/match/match-provider';
     TeamComponent,
     PlayersPage,
     PlayerDetailPage,
-    MatchListPage
+    MatchListPage,
+    TabsComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +39,8 @@ import { MatchProvider } from '../providers/match/match-provider';
     HomePage,
     PlayersPage,
     PlayerDetailPage,
-    MatchListPage
+    MatchListPage,
+    TabsComponent
   ],
   providers: [
     StatusBar,
