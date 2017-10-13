@@ -12,7 +12,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-@Path("/match")
+@Path("/matches")
 @Stateless
 public class MatchEndpoint {
 
@@ -20,7 +20,6 @@ public class MatchEndpoint {
     private MatchDao matchDao;
 
     @GET
-    @Path("/list")
     @Produces(MediaType.APPLICATION_JSON)
     public List<Match> getAllMatches() {
         return matchDao.findAll();

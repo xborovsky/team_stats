@@ -6,27 +6,29 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Lob;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "teams")
-@NamedQuery(name = Team.QUERY_FIND_ALL, query = "SELECT t FROM Team t ORDER BY t.name")
-public class Team implements Serializable {
-    private static final long serialVersionUID = 1409645858091780864L;
+@Table(name = "assists")
+@NamedQuery(name = Assist.QUERY_FIND_BY_PLAYER, query = "SELECT COUNT(a.id) FROM Assist a WHERE a.player.id = ?1")
+public class Assist implements Serializable {
+    private static final long serialVersionUID = 4826066189446159832L;
 
-    public static final String QUERY_FIND_ALL = "Team.findAll";
+    public static final String QUERY_FIND_BY_PLAYER = "Assist.findByPlayer";
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private long id;
-    @Column(name = "name", unique = true, nullable = false)
-    private String name;
-    @Column(name = "logo")
-    @Lob
-    private byte[] logo;
+    @ManyToOne
+    @JoinColumn(name = "goal_id", nullable = false)
+    private Goal goal;
+    @ManyToOne
+    @JoinColumn(name = "player_id", nullable = false)
+    private Player player;
 
     public long getId() {
         return id;
@@ -36,26 +38,26 @@ public class Team implements Serializable {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public Goal getGoal() {
+        return goal;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setGoal(Goal goal) {
+        this.goal = goal;
     }
 
-    public byte[] getLogo() {
-        return logo;
+    public Player getPlayer() {
+        return player;
     }
 
-    public void setLogo(byte[] logo) {
-        this.logo = logo;
+    public void setPlayer(Player player) {
+        this.player = player;
     }
 
     @Override
     public int hashCode() {
         int hash = 3;
-        hash = 37 * hash + (int) (this.id ^ (this.id >>> 32));
+        hash = 29 * hash + (int) (this.id ^ (this.id >>> 32));
         return hash;
     }
 
@@ -67,7 +69,7 @@ public class Team implements Serializable {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Team other = (Team) obj;
+        final Assist other = (Assist) obj;
         if (this.id != other.id) {
             return false;
         }
@@ -76,7 +78,7 @@ public class Team implements Serializable {
 
     @Override
     public String toString() {
-        return "Team{" + "id=" + id + ", name=" + name + '}';
+        return "Assist{" + "id=" + id + ", goal=" + goal + ", player=" + player + '}';
     }
 
 }
