@@ -1,3 +1,4 @@
+import { StatisticsPage } from './../pages/statistics/statistics';
 import { TeamsPage } from './../pages/teams/teams';
 import { MatchDetailPage } from './../pages/match-detail/match-detail';
 import { TabsComponent } from './../components/tabs/tabs';
@@ -22,6 +23,7 @@ import { TeamProvider } from '../providers/team/team-provider';
 import { PlayerProviderFake } from '../providers/player/player-provider-fake';
 import { MatchProviderFake } from '../providers/match/match-provider-fake';
 import { TeamProviderFake } from '../providers/team/team-provider-fake';
+import { StatsProviderFake } from './../providers/stats/stats-provider-fake';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,8 @@ import { TeamProviderFake } from '../providers/team/team-provider-fake';
     MatchListPage,
     TabsComponent,
     MatchDetailPage,
-    TeamsPage
+    TeamsPage,
+    StatisticsPage
   ],
   imports: [
     BrowserModule,
@@ -46,7 +49,8 @@ import { TeamProviderFake } from '../providers/team/team-provider-fake';
     MatchListPage,
     TabsComponent,
     MatchDetailPage,
-    TeamsPage
+    TeamsPage,
+    StatisticsPage
   ],
   providers: [
     StatusBar,
@@ -58,7 +62,8 @@ import { TeamProviderFake } from '../providers/team/team-provider-fake';
     TeamProvider,
     PlayerProviderFake,
     MatchProviderFake,
-    TeamProviderFake
+    TeamProviderFake,
+    StatsProviderFake
   ]
 })
 export class AppModule {}

@@ -1,0 +1,57 @@
+<ion-header>
+    
+      <ion-navbar>
+        <ion-title>Statistics</ion-title>
+      </ion-navbar>
+    
+    </ion-header>
+    
+    
+    <ion-content padding>
+      <ion-list>
+        <ion-list-header>
+          Player Stats
+        </ion-list-header>
+        <ion-item>
+          <ion-label>
+            <ion-grid>
+              <ion-row align-items-center>
+                <ion-col col-1>
+                  &nbsp;
+                </ion-col>
+                <ion-col>
+                  Name
+                </ion-col>
+                <ion-col>
+                  G
+                </ion-col>
+                <ion-col>
+                  A
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-label>
+        </ion-item>
+        <ion-item *ngFor="let statistic of statistics | async; let idx=index">
+          <ion-label (click)="goToPlayerDetail(statistic.player.id)">
+            <ion-grid>
+              <ion-row align-items-center>
+                <ion-col col-1>
+                  {{ idx+1 }}
+                </ion-col>
+                <ion-col>
+                  {{ statistic.player.name }}
+                </ion-col>
+                <ion-col>
+                  {{ statistic.goals }}
+                </ion-col>
+                <ion-col>
+                  {{ statistic.assists }}
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+    

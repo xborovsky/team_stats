@@ -1,3 +1,4 @@
+import { StatisticsPage } from './../../pages/statistics/statistics';
 import { TeamsPage } from './../../pages/teams/teams';
 import { MatchListPage } from './../../pages/match-list/match-list';
 import { PlayersPage } from './../../pages/players/players';
@@ -12,6 +13,7 @@ export class TabsComponent {
   playersRoot = PlayersPage;
   matchesRoot = MatchListPage;
   teamsRoot = TeamsPage;
+  statsRoot = StatisticsPage;
 
   constructor() {}
 
