@@ -18,13 +18,21 @@
           <ion-row>
             <ion-col col-10>
               <ion-grid>
-                <ion-row justify-content-start>
-                  <ion-col col-2><img src="data:image/jpeg;base64,{{match.homeTeam.logo}}" /></ion-col>
+                <ion-row justify-content-start align-items-center>
+                  <ion-col col-2>
+                    <!--<img *ngIf="match.homeTeam.logo" src="data:image/jpeg;base64,{{match.homeTeam.logo}}" />
+                    <img *ngIf="!match.homeTeam.logo" src="assets/avatar.png" width="20" height="20" />-->
+                    <img src="{{match.homeTeam.logo}}" width="30" height="30" />
+                  </ion-col>
                   <ion-col col-10 class="team-name">{{ match.homeTeam.name }}</ion-col>
                 </ion-row>
-                <ion-row justify-content-start>
-                  <ion-col col-2><img src="data:image/jpeg;base64,{{match.awayTeam.logo}}" /></ion-col>
-                  <ion-col col-10 class="team-name">{{ match.awayTeam.name }}</ion-col>
+                <ion-row justify-content-start align-items-center>
+                    <ion-col col-2>
+                      <!--<img *ngIf="match.awayTeam.logo" src="data:image/jpeg;base64,{{match.awayTeam.logo}}" />
+                      <img *ngIf="!match.awayTeam.logo" src="assets/avatar.png" width="20" height="20" />-->
+                      <img src="{{match.awayTeam.logo}}" width="30" height="30" />
+                    </ion-col>
+                    <ion-col col-10 class="team-name">{{ match.awayTeam.name }}</ion-col>
                 </ion-row>
               </ion-grid>
             </ion-col>
@@ -33,6 +41,7 @@
             </ion-col>
           </ion-row>
           <ion-row justify-content-start>
+            <ion-col col-2>&nbsp;</ion-col>
             <ion-col class="match-date">
               {{ match.date | date:'dd.MM.y hh:mm' }}
             </ion-col>

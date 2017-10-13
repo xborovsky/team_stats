@@ -14,38 +14,15 @@ export class MatchProvider {
   constructor(public http: Http) {}
 
   getAllMatches():Observable<Match[]> {
-    /*return this.http.get(`${this.url}`)
+    return this.http.get(`${this.url}`)
       .map((res:Response) => res.json())
-      .catch((error:any) => Observable.throw(error.json().error || 'Server error'));*/
-      return Observable.create(observer => {
-        setTimeout(() => {
-          let matches:Match[] = [];
-          matches.push(this.testData());
-          observer.next(matches);
-          observer.complete();
-        }, 1000);
-      });
+      .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
   }
 
   getMatch(id:number):Observable<Match> {
-    /*return this.http.get(`${this.url}/${id}`)
+    return this.http.get(`${this.url}/${id}`)
       .map((res:Response) => res.json())
-      .catch((error:any) => Observable.throw(error.json().error || 'Server error'));*/
-      return Observable.create(observer => {
-        setTimeout(() => {
-          observer.next(this.testData());
-          observer.complete();
-        }, 1000);
-      });
-  }
-
-  testData() {
-    let homeTeam = new Team('HC Domynos Praha');
-    let awayTeam = new Team('HC Rex Bohemia');
-    let match = new Match(homeTeam, awayTeam, new Date(1507786860000));
-    match.id = 1;
-
-    return match;
+      .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
   }
 
 }

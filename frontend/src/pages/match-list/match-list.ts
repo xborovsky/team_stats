@@ -1,7 +1,7 @@
 import { MatchDetailPage } from './../match-detail/match-detail';
 import { Observable } from 'rxjs/rx';
 import { Match } from './../../model/match';
-import { MatchProvider } from './../../providers/match/match-provider';
+import { MatchProviderFake } from './../../providers/match/match-provider-fake';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
@@ -13,7 +13,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class MatchListPage {
   matches : Observable<Match[]>;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public matchProvider:MatchProvider) {}
+  constructor(public navCtrl: NavController, public navParams: NavParams, public matchProvider:MatchProviderFake) {}
 
   ionViewDidLoad() {
     this.matches= this.matchProvider.getAllMatches();

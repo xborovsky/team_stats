@@ -1,16 +1,9 @@
 import { PlayerDetailPage } from './../player-detail/player-detail';
 import { Player } from './../../model/player';
-import { PlayerProvider } from './../../providers/player/player-provider';
+import { PlayerProviderFake } from './../../providers/player/player-provider-fake';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Observable } from 'rxjs/Observable';
-
-/**
- * Generated class for the PlayersPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -21,7 +14,7 @@ export class PlayersPage {
 
   private players:Observable<Player[]>;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public playerProvider: PlayerProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public playerProvider: PlayerProviderFake) {
   }
 
   ionViewDidLoad() {

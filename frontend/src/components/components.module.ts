@@ -1,11 +1,8 @@
 import { NgModule } from '@angular/core';
-import { TeamComponent } from './team/team';
 import { TabsComponent } from './tabs/tabs';
 @NgModule({
-	declarations: [TeamComponent,
-    TabsComponent],
+	declarations: [TabsComponent],
 	imports: [],
-	exports: [TeamComponent,
-    TabsComponent]
+	exports: [TabsComponent]
 })
 export class ComponentsModule {}

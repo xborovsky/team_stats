@@ -12,11 +12,16 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { HttpModule } from '@angular/http';
 
 import { MyApp } from './app.component';
-import { TeamProvider } from '../providers/team/team-provider';
 
 import { PlayerProvider } from '../providers/player/player-provider';
 import { StatsProvider } from '../providers/stats/stats-provider';
 import { MatchProvider } from '../providers/match/match-provider';
+import { TeamProvider } from '../providers/team/team-provider';
+
+/* TODO remove these */
+import { PlayerProviderFake } from '../providers/player/player-provider-fake';
+import { MatchProviderFake } from '../providers/match/match-provider-fake';
+import { TeamProviderFake } from '../providers/team/team-provider-fake';
 
 @NgModule({
   declarations: [
@@ -47,11 +52,13 @@ import { MatchProvider } from '../providers/match/match-provider';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    TeamProvider,
     PlayerProvider,
     StatsProvider,
     MatchProvider,
-    TeamProvider
+    TeamProvider,
+    PlayerProviderFake,
+    MatchProviderFake,
+    TeamProviderFake
   ]
 })
 export class AppModule {}

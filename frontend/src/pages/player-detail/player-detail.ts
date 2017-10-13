@@ -20,10 +20,10 @@ export class PlayerDetailPage {
   }
 
   ionViewDidLoad() {
-    this.statsProvider.getPlayerStats(this.playerId)
+    /*this.statsProvider.getPlayerStats(this.playerId)
       .subscribe((statistic:Statistic) => {
         this.statistic = statistic;
-      });
+      });*/
   }
 
 }

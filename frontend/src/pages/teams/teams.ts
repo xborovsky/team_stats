@@ -1,6 +1,6 @@
 import { Observable } from 'rxjs/rx';
 import { Team } from './../../model/team';
-import { TeamProvider } from './../../providers/team/team-provider';
+import { TeamProviderFake } from './../../providers/team/team-provider-fake';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
@@ -12,7 +12,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class TeamsPage {
   teams:Observable<Team[]>;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public teamProvider:TeamProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public teamProvider:TeamProviderFake) {
   }
 
   ionViewDidLoad() {

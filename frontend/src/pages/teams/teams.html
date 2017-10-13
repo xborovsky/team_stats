@@ -15,9 +15,11 @@
     <ion-item *ngFor="let team of teams | async">
       <ion-label>
         <ion-grid>
-          <ion-row>
+          <ion-row align-items-center>
             <ion-col col-2>
-              {{ team.logo }}
+                <!--<img *ngIf="team.logo" src="data:image/jpeg;base64,{{team.logo}}" />
+                <img *ngIf="!team.logo" src="assets/avatar.png" width="40" height="40" />-->
+                <img src="{{ team.logo }}" width="40" height="40" />
             </ion-col>
             <ion-col>
               {{ team.name }}
